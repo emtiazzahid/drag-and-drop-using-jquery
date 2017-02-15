@@ -1,0 +1,24 @@
+.block
+{
+    z-index:9999;
+    cursor:move;
+    /*width:150px;*/
+    background-color:lightgreen;
+    padding:10px;
+    margin:10px;
+}
+.dropBox{
+    /*width:300px;*/
+    /*overflow:auto;*/
+    /*height:300px;*/
+    background-color:yellow;
+    position:absolute;
+}
+.productCode
+{
+
+}
+li
+{
+    list-style:none;
+}
