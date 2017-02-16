@@ -130,20 +130,26 @@
     </script>
     <script>
         $(document).ready(function () {
+            bindFunc()
             $(".block").draggable({ helper: 'clone' });
             $("#dropZone").droppable(
                     {
                         accept: ".block",
                         drop: function (ev, ui) {
                             var droppedItem = $(ui.draggable).clone();
+                            droppedItem.prepend($('<button type="button" class="btn btn-info blockCloseBtn">X</button>'));
                             $(this).append(droppedItem);
-//                            $('#codeView').append(droppedItem);
-//                            console.log(s);
-
+                            bindFunc()
                         }
                     }
 
             );
+            //any Js code that needs to be rebinded
+            function bindFunc(){
+                $( '.blockCloseBtn' ).click(function() {
+                    $( this).parent().remove();
+                });
+            }
 
         });
     </script>
