@@ -82,13 +82,14 @@
                             <div class="col-md-8" id="dropZone" class="dropBox">
                                     <div>
                                         <div id="header" style="text-align:center"><h3>Drop Here</h3></div>
-                                        <div>
+                                        <div id="ab">
                                             <ul id="items">
 
                                             </ul>
                                         </div>
                                     </div>
                             </div>
+                             <button type="button" class="btn btn-primary btn-block" id="em">Generate Code</button>
                         </div>
                     </div>
                 </div>
@@ -144,6 +145,32 @@
 
             );
 
+        });
+    </script>
+
+    <script>
+        function display( divs ) {
+            var a = [];
+            for ( var i = 0; i < divs.length; i++ ) {
+                a.push( divs[ i ].innerHTML );
+            }
+            $( "#codeView" ).text( a.join(" ") );
+        }
+
+
+
+        $("#em").on("click",function(){
+
+            var len = $("#dropZone .block").length;
+            var text = '';
+
+            for(var i=0; i<len ;i++){
+                text += $("#dropZone .block")[i].outerHTML;
+
+            }
+
+            $("#codeView").text(text);
+            console.log(text);
         });
     </script>
 
